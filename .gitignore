@@ -4,3 +4,4 @@
 .env.development
 dist/
 node_modules/
+build/
