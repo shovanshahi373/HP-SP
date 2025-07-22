@@ -1,0 +1,35 @@
+{
+  "name": "hype-packs-miner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:prod": "webpack --mode production",
+    "build:dev": "webpack serve --mode development",
+    "start:dev": "nodemon --watch \"src/**/*.ts\" --exec \"ts-node\" src/index.ts",
+    "start:prod": "npx tsc && node dist/index.js",
+    "webpack:build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@infisical/sdk": "^4.0.2",
+    "chalk": "^5.4.1",
+    "dotenv": "^17.2.0",
+    "form-data": "^4.0.4",
+    "node-fetch": "^2.7.0",
+    "puppeteer": "^24.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.15",
+    "@types/node-fetch": "^2.6.12",
+    "nodemon": "^3.1.10",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.100.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}
