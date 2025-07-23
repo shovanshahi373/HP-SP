@@ -69,10 +69,10 @@ const init = async (
     // ],
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
     slowMo: 50,
-    // executablePath:
-    //   process.env.NODE_ENV === "production"
-    //     ? globalThis.SECRETS.PUPPETEER_EXEC_PATH
-    //     : puppeteer.executablePath(),
+    executablePath:
+      process.env.NODE_ENV === "production"
+        ? globalThis.SECRETS.PUPPETEER_EXEC_PATH
+        : puppeteer.executablePath(),
   });
 
   const accounts = [
