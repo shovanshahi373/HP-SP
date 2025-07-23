@@ -11,8 +11,8 @@ import {
 } from "../utils";
 
 export const rejoin = (
-  filterKeyword: string,
   topic: string,
+  filterKeyword: string,
   version: string,
   debug: boolean = false
 ) => {
