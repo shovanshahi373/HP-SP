@@ -8,13 +8,16 @@ const init = async (
   scriptUrl: string,
   topics: string[],
   scope: string,
+  onConsoleMessage: (message: string) => void,
   ...args: any[]
 ) => {
   const { sendAlert } = create(globalThis.SECRETS.HYPE_PACKS_MINER);
 
   const visitURL = async (page: Page, topic: string) => {
     await page.setBypassCSP(true);
-    await page.goto(redirect);
+    await page.goto(redirect, {
+      waitUntil: "networkidle2",
+    });
     try {
       await page.addScriptTag({
         path: scriptUrl,
@@ -28,7 +31,8 @@ const init = async (
 
       page.on("console", (msg) => {
         const text = msg.text();
-        return console.log("PAGE LOG>", text);
+        onConsoleMessage(text);
+        return;
       });
     } catch (error) {
       console.error(error);

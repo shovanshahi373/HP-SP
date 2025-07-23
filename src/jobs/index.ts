@@ -17,6 +17,11 @@ const task = async () => {
     path.resolve(__dirname, "../../dist/bundle.js"),
     topics,
     "rejoin",
+    (message: string) => {
+      if (message.includes(filterKeyword)) {
+        console.log("PAGE LOG>", message);
+      }
+    },
     // below are all args to rejoin
     filterKeyword,
     globalThis.SECRETS.VERSION,
