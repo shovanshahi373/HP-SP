@@ -8,7 +8,8 @@
     "build:dev": "webpack serve --mode development",
     "start:dev": "nodemon --watch \"src/**/*.ts\" --exec \"ts-node\" src/index.ts",
     "start:prod": "npx tsc && node build/index.js",
-    "webpack:build": "webpack"
+    "webpack:build": "webpack",
+    "start:win": "set NODE_ENV=production && npx tsc && node build/index.js"
   },
   "keywords": [],
   "author": "",

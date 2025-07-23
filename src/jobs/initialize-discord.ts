@@ -67,6 +67,7 @@ const init = async (
     //   "--single-process",
     //   "--no-zygote",
     // ],
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
     slowMo: 50,
     executablePath:
       process.env.NODE_ENV === "production"
