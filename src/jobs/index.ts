@@ -2,9 +2,9 @@ import path from "path";
 import puppeteer, { Page } from "puppeteer";
 import cron from "node-cron";
 
-import { loadSecrets } from "@/config/secretManager";
-import { ICON_URL } from "@/constants";
-import { create } from "@/services/notification";
+import { loadSecrets } from "../config/secretManager";
+import { ICON_URL } from "../constants";
+import { create } from "../services/notification";
 
 const task = async () => {
   await loadSecrets();
